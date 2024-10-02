@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -20,5 +21,13 @@ public class EnemyMovement : MonoBehaviour
         //rb2D.MovePosition();
         rb2D.AddForce((player.transform.position - this.transform.position).normalized * velocity);
 
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Projectile"))
+        {
+            Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+        }
     }
 }
