@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public EnemySO enemyData;
+    [SerializeField] EnemySO enemyData;
+    EnemyStats enemyStats;
 
     [SerializeField] Rigidbody2D rb2D;
     public GameObject player;
@@ -13,6 +15,7 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemyStats = GetComponent<EnemyStats>();
         rb2D = GetComponent<Rigidbody2D>();
     }
 
@@ -25,10 +28,12 @@ public class EnemyMovement : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        float dmg = collision.GetComponent<Bullet>().CurrentDamage;
+
         if (collision.gameObject.CompareTag("Projectile"))
         {
-            Destroy(collision.gameObject);
-            Destroy(this.gameObject);
+            collision.GetComponent<Bullet>().DecreasePierce();
+            enemyStats.TakeDamage(dmg);
         }
     }
 }

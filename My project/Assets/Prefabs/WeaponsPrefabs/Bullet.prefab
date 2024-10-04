@@ -99,8 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9210f91574adca4caaf1bced63e67a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 500
-  duration: 3
+  weaponData: {fileID: 11400000, guid: 4cdc5b60c24affe4d847ec26689b7c8d, type: 2}
 --- !u!70 &1297170180459840196
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

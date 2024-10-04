@@ -19,9 +19,9 @@ public class EnemyStats : MonoBehaviour
 
     public void TakeDamage(float dmg)
     {
-        currentDamage -= dmg;
+        currentHealth -= dmg;
 
-        if (currentDamage < 0)
+        if (currentHealth <= 0)
         {
             Kill();
         }
