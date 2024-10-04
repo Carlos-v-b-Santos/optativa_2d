@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private float velocity;
+    public EnemySO enemyData;
+
     [SerializeField] Rigidbody2D rb2D;
     public GameObject player;
 
@@ -19,7 +20,7 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         //rb2D.MovePosition();
-        rb2D.AddForce((player.transform.position - this.transform.position).normalized * velocity);
+        rb2D.AddForce((player.transform.position - this.transform.position).normalized * enemyData.moveSpeed);
 
     }
     private void OnTriggerEnter2D(Collider2D collision)

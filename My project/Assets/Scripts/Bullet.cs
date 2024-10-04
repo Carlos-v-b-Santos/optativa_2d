@@ -7,10 +7,18 @@ public class Bullet : MonoBehaviour
 {
     Rigidbody2D rb2D;
     [SerializeField] float speed;
+    [SerializeField] float duration;
     // Start is called before the first frame update
     void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
         rb2D.AddRelativeForce(Vector2.up * speed);
+        StartCoroutine(DestroyProjetile());
+    }
+
+    IEnumerator DestroyProjetile()
+    {
+        yield return new WaitForSeconds(duration);
+        Destroy(this.gameObject);
     }
 }
