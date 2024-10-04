@@ -20,7 +20,7 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         //rb2D.MovePosition();
-        rb2D.AddForce((player.transform.position - this.transform.position).normalized * enemyData.moveSpeed);
+        rb2D.AddForce((player.transform.position - this.transform.position).normalized * enemyData.MoveSpeed);
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
