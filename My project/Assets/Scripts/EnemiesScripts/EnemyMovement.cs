@@ -28,11 +28,11 @@ public class EnemyMovement : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        float dmg = collision.GetComponent<Bullet>().CurrentDamage;
+        float dmg = collision.GetComponent<BulletBehavior>().CurrentDamage;
 
         if (collision.gameObject.CompareTag("Projectile"))
         {
-            collision.GetComponent<Bullet>().DecreasePierce();
+            collision.GetComponent<BulletBehavior>().DecreasePierce();
             enemyStats.TakeDamage(dmg);
         }
     }
