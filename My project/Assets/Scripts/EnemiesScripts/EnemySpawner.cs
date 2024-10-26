@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] List<GameObject> _enemies;
     [SerializeField] GameObject _player;
+    [SerializeField] Transform _enemiesTranformParent;
     [SerializeField] Vector2 spawnArea;
     [SerializeField] float spawnTimer;
 
@@ -31,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
         position += _player.transform.position;
         
 
-        GameObject newEnemy = Instantiate(_enemies[Random.Range(0, _enemies.Count)]);
+        GameObject newEnemy = Instantiate(_enemies[Random.Range(0, _enemies.Count)],_enemiesTranformParent);
         
         newEnemy.transform.position = position;
         newEnemy.GetComponent<EnemyMovement>().player = _player;

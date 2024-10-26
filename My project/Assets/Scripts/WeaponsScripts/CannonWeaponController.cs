@@ -3,18 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CannonWeaponController : WeaponController
-{
-    // Start is called before the first frame update
+{ 
+    [SerializeField] private AimSystem aimSystem;
+    private Transform target;
 
-    // Update is called once per frame
     protected override void Start()
     {
         base.Start();
     }
 
+    private void Update()
+    {
+        target = aimSystem.GetClosestEnemyTransform();
+        if (target != null)
+        {
+            Vector2 direction = target.position - transform.position;
+            this.transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
+        }
+    }
+
     protected override void FireWeapon()
     {
         base.FireWeapon();
-        Instantiate(weaponData._WeaponPrefab, this.transform);
+        Instantiate(weaponData._WeaponPrefab, this.transform.position, this.transform.rotation);
     }
 }
