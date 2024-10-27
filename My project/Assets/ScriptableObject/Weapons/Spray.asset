@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a5d5c19689a36f41b907a189840dde3, type: 3}
-  m_Name: Canon
+  m_Name: Spray
   m_EditorClassIdentifier: 
-  _weaponPrefab: {fileID: 5481171266808141527, guid: af1baef833aaf0540ac03aa38a592a8e, type: 3}
+  _weaponPrefab: {fileID: 5168619803036646923, guid: 4cb2d1771ab33cc4d8e8dc94b1a463d3, type: 3}
   damage: 1
-  speed: 400
+  speed: 800
   cooldown: 0.5
   duration: 3
   pierce: 1

@@ -15,4 +15,7 @@ public class EnemySO : ScriptableObject
     [SerializeField] float damage;
     public float Damage { get => damage; set => damage = value; }
 
+    [SerializeField] GameObject _expPrefab;
+    public GameObject _ExpPrefab { get => _expPrefab; private set => _expPrefab = value; }
+
 }

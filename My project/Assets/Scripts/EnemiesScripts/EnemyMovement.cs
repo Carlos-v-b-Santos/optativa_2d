@@ -20,7 +20,7 @@ public class EnemyMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //rb2D.MovePosition();
         rb2D.AddForce((player.transform.position - this.transform.position).normalized * enemyData.MoveSpeed);
@@ -28,6 +28,8 @@ public class EnemyMovement : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision == null) return;
+        
         float dmg = collision.GetComponent<BulletBehavior>().CurrentDamage;
 
         if (collision.gameObject.CompareTag("Projectile"))

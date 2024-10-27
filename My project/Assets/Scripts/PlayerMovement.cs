@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float reverse;
     [SerializeField] float rotation;
+    [SerializeField] PlayerStats playerStats;
 
      // Start is called before the first frame update
     void Start()
@@ -50,7 +51,17 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            this.gameObject.SetActive(false);
+            playerStats.TakeDamage(collision.gameObject.GetComponent<EnemyStats>().currentDamage);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Exp"))
+        {
+            playerStats.UpdateExp(collision.gameObject.GetComponent<Exp>().expPoint);
+            Debug.Log("exp coletado");
+            Destroy(collision.gameObject);
         }
     }
 }

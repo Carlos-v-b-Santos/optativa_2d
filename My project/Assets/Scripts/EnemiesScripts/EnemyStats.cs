@@ -8,7 +8,7 @@ public class EnemyStats : MonoBehaviour
 
     float currentMoveSpeed;
     float currentHealth;
-    float currentDamage;
+    public float currentDamage;
 
     private void Awake()
     {
@@ -29,6 +29,7 @@ public class EnemyStats : MonoBehaviour
 
     private void Kill()
     {
+        Instantiate(enemyData._ExpPrefab,this.transform.position,Quaternion.identity);
         Destroy(this.gameObject);
     }
 }

@@ -31,4 +31,9 @@ public class ProjectileWeaponBehavior : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
+
+    public virtual void UpdateDamage(float modifyDamage)
+    {
+        CurrentDamage += modifyDamage;
+    }
 }
