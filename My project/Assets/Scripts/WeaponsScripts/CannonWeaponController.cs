@@ -14,5 +14,6 @@ public class CannonWeaponController : WeaponController
     {
         base.FireWeapon();
         Instantiate(weaponData._WeaponPrefab, this.transform.position, this.transform.rotation);
+        
     }
 }

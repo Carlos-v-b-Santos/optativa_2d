@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1792919193995697316}
   - component: {fileID: 1297170180459840196}
   - component: {fileID: 673954176177852574}
-  - component: {fileID: 7696629649499624410}
+  - component: {fileID: 2559135517989158457}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Projectile
@@ -149,7 +149,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7696629649499624410
+--- !u!114 &2559135517989158457
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,7 +158,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5481171266808141527}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b22da99c3d7b0ac4fb99c0ff25bb08d0, type: 3}
+  m_Script: {fileID: 11500000, guid: fb7ca2b08e51e3d43a27cff83325126a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 4cdc5b60c24affe4d847ec26689b7c8d, type: 2}
+  CurrentPierce: 0
+  CurrentDamage: 0

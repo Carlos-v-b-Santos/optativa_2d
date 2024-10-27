@@ -34,9 +34,12 @@ public class BulletWeaponController : WeaponController
     protected override void FireWeapon()
     {
         base.FireWeapon();
-        //Instantiate(weaponData._WeaponPrefab, this.transform.position, this.transform.rotation);
         Instantiate(weaponData._WeaponPrefab, this.transform.position, transform.rotation * Quaternion.Euler(0, 0, 90));
         Instantiate(weaponData._WeaponPrefab, this.transform.position, transform.rotation * Quaternion.Euler(0, 0, -90));
-        //Instantiate(weaponData._WeaponPrefab, this.transform.position, initialRotation * Quaternion.Euler(0, 0, angle + 90));
+    }
+
+    public void UpgradeCooldown(float modifyCooldown)
+    {
+        this.currentCooldown -= modifyCooldown;
     }
 }

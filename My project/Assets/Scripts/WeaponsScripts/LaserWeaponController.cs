@@ -6,6 +6,7 @@ public class LaserWeaponController : WeaponController
 { 
     [SerializeField] private AimSystem aimSystem;
     private Transform target;
+    [SerializeField] public float modifyDamage;
 
     protected override void Start()
     {
@@ -26,5 +27,10 @@ public class LaserWeaponController : WeaponController
     {
         base.FireWeapon();
         Instantiate(weaponData._WeaponPrefab, this.transform.position, this.transform.rotation);
+    }
+
+    public void UpgradeDamage(float modifyDamage)
+    {
+        this.modifyDamage += modifyDamage;
     }
 }

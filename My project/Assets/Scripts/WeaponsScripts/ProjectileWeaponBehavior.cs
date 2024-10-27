@@ -5,8 +5,9 @@ using UnityEngine;
 public class ProjectileWeaponBehavior : MonoBehaviour
 {
     [SerializeField] protected WeaponSO weaponData;
-    public float CurrentDamage { get; private set; }
-    public float CurrentPierce { get; private set; }
+    [SerializeField] protected int CurrentPierce;
+    public float CurrentDamage;
+
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -30,10 +31,5 @@ public class ProjectileWeaponBehavior : MonoBehaviour
     public virtual void DestroyProjetile()
     {
         Destroy(this.gameObject);
-    }
-
-    public virtual void UpdateDamage(float modifyDamage)
-    {
-        CurrentDamage += modifyDamage;
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7556504016272897221}
   - component: {fileID: 2386429797993014341}
   - component: {fileID: 9134166665869095729}
-  - component: {fileID: 6768985002514084296}
+  - component: {fileID: 4472779353415186059}
   - component: {fileID: 7082059901839847030}
   m_Layer: 0
   m_Name: CannonBall
@@ -114,7 +114,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6768985002514084296
+--- !u!114 &4472779353415186059
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,10 +123,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5949907967875879828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b22da99c3d7b0ac4fb99c0ff25bb08d0, type: 3}
+  m_Script: {fileID: 11500000, guid: b0fa67763f88eb940a20cea31e551b69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: a7de0c80532ff76418ae85f19eaa458e, type: 2}
+  CurrentPierce: 0
+  CurrentDamage: 0
 --- !u!58 &7082059901839847030
 CircleCollider2D:
   m_ObjectHideFlags: 0

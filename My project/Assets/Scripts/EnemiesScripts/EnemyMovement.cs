@@ -29,13 +29,12 @@ public class EnemyMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision == null) return;
-        
-        float dmg = collision.GetComponent<BulletBehavior>().CurrentDamage;
 
         if (collision.gameObject.CompareTag("Projectile"))
         {
-            collision.GetComponent<BulletBehavior>().DecreasePierce();
-            enemyStats.TakeDamage(dmg);
+            DamageManager.Instance.CalcDamage(collision.gameObject.GetComponent<ProjectileWeaponBehavior>(),this.enemyStats);
+
+            collision.GetComponent<ProjectileWeaponBehavior>().DecreasePierce();
         }
     }
 }
