@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemyStatsSpawner : MonoBehaviour
 {
-    [SerializeField] List<GameObject> _enemies;
+    [SerializeField] List<EnemySO> _enemies;
     [SerializeField] GameObject _player;
     [SerializeField] Transform _enemiesTranformParent;
     [SerializeField] Vector2 spawnArea;
     [SerializeField] float spawnTimer;
+
+    [SerializeField] private float enemyMilestone = 90;
+    [SerializeField] private float enemyStep = 90;
+    [SerializeField] private int enemyPool = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -26,13 +30,22 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (TimeManager.Instance.time >= enemyMilestone)
+        {
+            Debug.Log("mais inimigos para spawnar");
+            enemyMilestone += enemyStep;
+            IncreaseEnemies();
+        }
+    }
     private void SpawnEnemy()
     {
         Vector3 position = GenerateRandomPosition();
         position += _player.transform.position;
         
 
-        GameObject newEnemy = Instantiate(_enemies[Random.Range(0, _enemies.Count)],_enemiesTranformParent);
+        GameObject newEnemy = Instantiate(_enemies[Random.Range(0, enemyPool)]._EnemyPrefab,_enemiesTranformParent);
         
         newEnemy.transform.position = position;
         newEnemy.GetComponent<EnemyMovement>().player = _player;
@@ -58,4 +71,13 @@ public class EnemySpawner : MonoBehaviour
 
         return position;
     }
+
+    public void IncreaseEnemies()
+    {
+        if(enemyPool < _enemies.Count)
+        {
+            enemyPool++;
+        }
+    }
+
 }

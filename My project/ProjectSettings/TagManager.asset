@@ -9,6 +9,7 @@ TagManager:
   - Exp
   - Cannon
   - Laser
+  - EnemySpawner
   layers:
   - Default
   - TransparentFX

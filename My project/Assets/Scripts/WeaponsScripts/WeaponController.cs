@@ -7,7 +7,6 @@ public class WeaponController : MonoBehaviour
     [SerializeField] protected WeaponSO weaponData;
     //[SerializeField] protected GameObject _WeaponPrefab;
     public float currentCooldown;
-    public int modifyPierce = 0;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -29,9 +28,5 @@ public class WeaponController : MonoBehaviour
     protected virtual void FireWeapon()
     {
         //Instantiate(_WeaponPrefab, this.transform);
-    }
-    public virtual void UpgradePierce(int modifyPierce)
-    {
-        this.modifyPierce += modifyPierce;
     }
 }

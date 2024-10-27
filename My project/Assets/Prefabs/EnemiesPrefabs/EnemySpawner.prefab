@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6903780721968288121}
   - component: {fileID: 3375753730841937697}
+  - component: {fileID: 6091951860296188106}
   m_Layer: 0
   m_Name: EnemySpawner
-  m_TagString: Untagged
+  m_TagString: EnemySpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,3 +52,16 @@ MonoBehaviour:
   _enemiesTranformParent: {fileID: 0}
   spawnArea: {x: 20, y: 15}
   spawnTimer: 0.5
+--- !u!114 &6091951860296188106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8173879491783676744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17a6128b452bd34d8ebec51d861b868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ModifyHealth: 0

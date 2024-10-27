@@ -32,5 +32,6 @@ public class LaserWeaponController : WeaponController
     public void UpgradeDamage(float modifyDamage)
     {
         this.modifyDamage += modifyDamage;
+        GameManager.Instance.UpgradeChoiced();
     }
 }

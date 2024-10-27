@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     //sistema de entrada
     public PlayerInputActions playerInputActions;
+
+    [SerializeField] private GameObject _panel;
 
     // Start is called before the first frame update
     void Awake()
@@ -30,5 +33,33 @@ public class GameManager : MonoBehaviour
         }
 
         playerInputActions.Player.Enable();
+    }
+
+    private void Update()
+    {
+        
+    }
+
+    public void LevelUP()
+    {
+        PauseGame();
+        _panel.SetActive(true);
+
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+    }
+
+    public void UpgradeChoiced()
+    {
+        _panel.SetActive(false);
+        ResumeGame();
     }
 }

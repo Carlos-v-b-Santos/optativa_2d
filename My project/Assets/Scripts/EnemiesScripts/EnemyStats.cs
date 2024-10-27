@@ -6,15 +6,19 @@ public class EnemyStats : MonoBehaviour
 {
     [SerializeField] EnemySO enemyData;
 
-    float currentMoveSpeed;
-    float currentHealth;
+    EnemyStatsModify enemyStatsModify;
+
+    [SerializeField] private float currentMoveSpeed;
+    [SerializeField] private float currentHealth;
     public float currentDamage;
 
     private void Awake()
     {
-        currentMoveSpeed = enemyData.MoveSpeed;
-        currentHealth = enemyData.MaxHealth;
-        currentDamage = enemyData.Damage;
+        enemyStatsModify = GameObject.FindGameObjectWithTag("EnemySpawner").GetComponent<EnemyStatsModify>();
+
+        currentMoveSpeed = enemyData.MoveSpeed + enemyStatsModify.ModifySpeed;
+        currentHealth = enemyData.MaxHealth + enemyStatsModify.ModifyHealth;
+        currentDamage = enemyData.Damage + enemyStatsModify.ModifyDamage;
     }
 
     public void TakeDamage(float dmg)

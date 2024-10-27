@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4854290538422139022}
   - component: {fileID: 852701064470164853}
   - component: {fileID: 223727314173868715}
-  - component: {fileID: 5846580734566449467}
+  - component: {fileID: 5203156799130694346}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Hunter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.92, y: 4.14, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -162,10 +162,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a030910ec45cf41a23f0d677533896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 03a3ac628ce0d7e409842056c9bba227, type: 2}
+  enemyData: {fileID: 11400000, guid: b6c7efad77ec6424fbd0c54cd8071731, type: 2}
   rb2D: {fileID: 0}
   player: {fileID: 0}
---- !u!114 &5846580734566449467
+--- !u!114 &5203156799130694346
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,4 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e6a802b71b840e44aa83a7d1e844c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 03a3ac628ce0d7e409842056c9bba227, type: 2}
+  enemyData: {fileID: 11400000, guid: b6c7efad77ec6424fbd0c54cd8071731, type: 2}
+  currentMoveSpeed: 0
+  currentHealth: 0
+  currentDamage: 0

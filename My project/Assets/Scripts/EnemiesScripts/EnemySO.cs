@@ -6,6 +6,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="EnemySO", menuName ="ScriptableObjects/Enemy")]
 public class EnemySO : ScriptableObject
 {
+    [SerializeField] GameObject _enemyPrefab;
+    public GameObject _EnemyPrefab { get => _enemyPrefab; private set => _enemyPrefab = value; }
+
     [SerializeField] float moveSpeed;
     public float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
 

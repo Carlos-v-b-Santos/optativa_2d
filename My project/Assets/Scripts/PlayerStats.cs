@@ -4,23 +4,11 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    [SerializeField] float health = 3f;
+    [SerializeField] public float health = 3f;
     [SerializeField] int exp = 0;
     [SerializeField] int expToUpLevel = 100;
     [SerializeField] int increaseExpToUpLevel = 100;
-    [SerializeField] int Level = 1;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] public int Level = 1;
 
     public void UpdateExp(int expPoint)
     {
@@ -30,6 +18,7 @@ public class PlayerStats : MonoBehaviour
             exp = 0;
             expToUpLevel += increaseExpToUpLevel;
             Level++;
+            GameManager.Instance.LevelUP();
         }
     }
 

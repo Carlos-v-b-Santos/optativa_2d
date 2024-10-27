@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8290182080922822157}
   - component: {fileID: 7380037180462007456}
   - component: {fileID: 8981018313634720709}
+  - component: {fileID: 5300629257260622146}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -107,6 +108,7 @@ MonoBehaviour:
   speed: 100
   reverse: 100
   rotation: 30
+  playerStats: {fileID: 5300629257260622146}
 --- !u!50 &7380037180462007456
 Rigidbody2D:
   serializedVersion: 4
@@ -169,6 +171,23 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.21133333}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
+--- !u!114 &5300629257260622146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349537053037560062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48769f1ec5426a046a0822236ddd5840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  exp: 0
+  expToUpLevel: 100
+  increaseExpToUpLevel: 100
+  Level: 1
 --- !u!1001 &153577872386743867
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -260,6 +279,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 7293894365708963308}
     m_Modifications:
     - target: {fileID: 1508641752632990308, guid: 6d6a3217257920342b510d3a47cc2d3d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1508641752632990308, guid: 6d6a3217257920342b510d3a47cc2d3d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1508641752632990308, guid: 6d6a3217257920342b510d3a47cc2d3d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -299,9 +326,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4088023646301049762, guid: 6d6a3217257920342b510d3a47cc2d3d, type: 3}
+      propertyPath: m_FlipY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088023646301049762, guid: 6d6a3217257920342b510d3a47cc2d3d, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088023646301049762, guid: 6d6a3217257920342b510d3a47cc2d3d, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088023646301049762, guid: 6d6a3217257920342b510d3a47cc2d3d, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4432595764535116722, guid: 6d6a3217257920342b510d3a47cc2d3d, type: 3}
+      propertyPath: modifyPierce
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5293936363668607061, guid: 6d6a3217257920342b510d3a47cc2d3d, type: 3}
       propertyPath: m_Name
       value: CannonWeaponController
+      objectReference: {fileID: 0}
+    - target: {fileID: 5293936363668607061, guid: 6d6a3217257920342b510d3a47cc2d3d, type: 3}
+      propertyPath: m_TagString
+      value: Cannon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -441,6 +492,10 @@ PrefabInstance:
     - target: {fileID: 6569846269411128124, guid: c8474cd4dbc6df84c92babb4d034c805, type: 3}
       propertyPath: m_Name
       value: LaserWeaponController
+      objectReference: {fileID: 0}
+    - target: {fileID: 6569846269411128124, guid: c8474cd4dbc6df84c92babb4d034c805, type: 3}
+      propertyPath: m_TagString
+      value: Laser
       objectReference: {fileID: 0}
     - target: {fileID: 8933331911837100891, guid: c8474cd4dbc6df84c92babb4d034c805, type: 3}
       propertyPath: aimSystem
