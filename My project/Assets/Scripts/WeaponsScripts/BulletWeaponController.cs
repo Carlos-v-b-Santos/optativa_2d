@@ -40,7 +40,7 @@ public class BulletWeaponController : WeaponController
 
     public void UpgradeCooldown(float modifyCooldown)
     {
-        this.currentCooldown -= modifyCooldown;
+        this.currentCooldown /= modifyCooldown;
         GameManager.Instance.UpgradeChoiced();
     }
 }

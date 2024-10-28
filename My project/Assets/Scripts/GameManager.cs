@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     public PlayerInputActions playerInputActions;
 
     [SerializeField] private GameObject _panel;
+    [SerializeField] private PlayerStats _player;
+
+    public int score = 0;
 
     // Start is called before the first frame update
     void Awake()
@@ -61,5 +64,10 @@ public class GameManager : MonoBehaviour
     {
         _panel.SetActive(false);
         ResumeGame();
+    }
+
+    public void ChanceScene(int index)
+    {
+        SceneManager.LoadScene(index);
     }
 }

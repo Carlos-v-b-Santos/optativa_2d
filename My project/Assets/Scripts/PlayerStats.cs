@@ -5,8 +5,9 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     [SerializeField] public float health = 3f;
-    [SerializeField] int exp = 0;
-    [SerializeField] int expToUpLevel = 100;
+    [SerializeField] private float healthForLevel = 1f;
+    [SerializeField] public int exp = 0;
+    [SerializeField] public int expToUpLevel = 100;
     [SerializeField] int increaseExpToUpLevel = 100;
     [SerializeField] public int Level = 1;
 
@@ -19,6 +20,8 @@ public class PlayerStats : MonoBehaviour
             expToUpLevel += increaseExpToUpLevel;
             Level++;
             GameManager.Instance.LevelUP();
+
+            health += healthForLevel;
         }
     }
 

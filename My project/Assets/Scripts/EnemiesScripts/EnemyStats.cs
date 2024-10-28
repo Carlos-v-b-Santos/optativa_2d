@@ -33,6 +33,7 @@ public class EnemyStats : MonoBehaviour
 
     private void Kill()
     {
+        GameManager.Instance.score += enemyData.PointValue;
         Instantiate(enemyData._ExpPrefab,this.transform.position,Quaternion.identity);
         Destroy(this.gameObject);
     }

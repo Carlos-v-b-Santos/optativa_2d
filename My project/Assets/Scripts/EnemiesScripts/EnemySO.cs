@@ -21,4 +21,7 @@ public class EnemySO : ScriptableObject
     [SerializeField] GameObject _expPrefab;
     public GameObject _ExpPrefab { get => _expPrefab; private set => _expPrefab = value; }
 
+    [SerializeField] int pointValue;
+    public int PointValue { get => pointValue; set => pointValue = value; }
+
 }

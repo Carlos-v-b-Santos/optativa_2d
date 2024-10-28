@@ -52,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             playerStats.TakeDamage(collision.gameObject.GetComponent<EnemyStats>().currentDamage);
+            Destroy(collision.gameObject);
         }
     }
 
