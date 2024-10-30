@@ -32,6 +32,7 @@ public class PlayerStats : MonoBehaviour
         {
             Debug.Log("game over");
             this.gameObject.SetActive(false);
+            GameManager.Instance.GameOver();
         }
     }
 

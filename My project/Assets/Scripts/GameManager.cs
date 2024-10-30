@@ -17,6 +17,11 @@ public class GameManager : MonoBehaviour
 
     public int score = 0;
 
+    [SerializeField] private string scoreRecordKey = "SCORE_RECORD";
+    [SerializeField] private string timeRecordKey = "TIME_RECORD";
+    [SerializeField] private string scoreKey = "SCORE_PLAYER";
+    [SerializeField] private string timeKey = "TIME_PLAYER";
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -69,5 +74,27 @@ public class GameManager : MonoBehaviour
     public void ChanceScene(int index)
     {
         SceneManager.LoadScene(index);
+    }
+
+    public void GameOver()
+    {
+        PauseGame();
+
+        float time = TimeManager.Instance.time;
+
+        PlayerPrefs.SetInt(scoreKey,score);
+        PlayerPrefs.SetFloat(timeKey,time);
+
+        if (score > PlayerPrefs.GetInt(scoreRecordKey))
+        {
+            PlayerPrefs.SetInt(scoreRecordKey,score);
+        }
+
+        if (time > PlayerPrefs.GetFloat(timeRecordKey))
+        {
+            PlayerPrefs.SetFloat (timeRecordKey,time);
+        }
+
+        ChanceScene(2);
     }
 }
