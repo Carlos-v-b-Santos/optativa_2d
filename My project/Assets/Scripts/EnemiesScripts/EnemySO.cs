@@ -9,6 +9,9 @@ public class EnemySO : ScriptableObject
     [SerializeField] GameObject _enemyPrefab;
     public GameObject _EnemyPrefab { get => _enemyPrefab; private set => _enemyPrefab = value; }
 
+    [SerializeField] GameObject _killEffect;
+    public GameObject _KillEffect { get => _killEffect; private set => _killEffect = value; }
+
     [SerializeField] float moveSpeed;
     public float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
 

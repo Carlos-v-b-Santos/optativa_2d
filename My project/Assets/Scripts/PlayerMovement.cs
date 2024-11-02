@@ -11,9 +11,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float reverse;
     [SerializeField] float rotation;
     [SerializeField] PlayerStats playerStats;
+    [SerializeField] GameObject rightFlame;
+    [SerializeField] GameObject leftFlame;
+
+    private bool isRightActived;
+    private bool isLeftActived;
 
      // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
     }
@@ -26,6 +31,9 @@ public class PlayerMovement : MonoBehaviour
 
     void GetMoveInput()
     {
+        isRightActived = false;
+        isLeftActived = false;
+
         //leitura no input system
         float playerForward =  GameManager.Instance.playerInputActions.Player.Forward.ReadValue<float>();
         float playerRotation = GameManager.Instance.playerInputActions.Player.Rotation.ReadValue<float>();
@@ -34,16 +42,44 @@ public class PlayerMovement : MonoBehaviour
         if (playerForward > 0)
         {
             rb2D.AddRelativeForce(speed * playerForward * Vector2.up);
+            isRightActived = true;
+            isLeftActived = true;
         }
         else if (playerForward < 0)
         {
-            rb2D.AddRelativeForce(reverse * playerForward * Vector2.up);
+            //rb2D.AddRelativeForce(reverse * playerForward * Vector2.up);
         }
 
         //rotação
         if (playerRotation != 0)
         {
             rb2D.AddTorque(rotation * playerRotation);
+            if (playerRotation > 0)
+            {
+                isRightActived = true;
+            }
+            else
+            {
+                isLeftActived = true;
+            }
+        }
+
+        if (!isRightActived)
+        {
+            rightFlame.SetActive(false);
+        }
+        else
+        {
+            rightFlame.SetActive(true);
+        }
+
+        if (!isLeftActived)
+        {
+            leftFlame.SetActive(false);
+        }
+        else
+        {
+            leftFlame.SetActive(true);
         }
     }
 
@@ -51,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            StartCoroutine(DamageEffect());
             playerStats.TakeDamage(collision.gameObject.GetComponent<EnemyStats>().currentDamage);
             Destroy(collision.gameObject);
         }
@@ -63,6 +100,24 @@ public class PlayerMovement : MonoBehaviour
             playerStats.UpdateExp(collision.gameObject.GetComponent<Exp>().expPoint);
             Debug.Log("exp coletado");
             Destroy(collision.gameObject);
+        }
+    }
+    IEnumerator DamageEffect()
+    {
+        SpriteRenderer c = GetComponent<SpriteRenderer>();
+
+        for (int i = 0; i < 11; i++)
+        {
+            if (i / 2 == 0)
+            {
+                c.color = new Color(1f, 1f, 1f, 0.1f);
+                yield return new WaitForSeconds(.1f);
+            }
+            else
+            {
+                c.color = new Color(1f, 1f, 1f, 1f);
+                yield return new WaitForSeconds(.1f);
+            }
         }
     }
 }

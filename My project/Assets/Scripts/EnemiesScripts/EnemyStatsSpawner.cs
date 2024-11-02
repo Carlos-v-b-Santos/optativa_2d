@@ -16,7 +16,7 @@ public class EnemyStatsSpawner : MonoBehaviour
     [SerializeField] private int enemyPool = 1;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         StartCoroutine(EnemySpawn());
     }

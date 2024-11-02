@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LaserWeaponController : WeaponController
-{ 
+{
+    [SerializeField] private ParticleSystem _fireEffect;
+
     [SerializeField] private AimSystem aimSystem;
+    [SerializeField] private float torretRotationVelocity = 1f;
     private Transform target;
     [SerializeField] public float modifyDamage;
 
-    protected override void Start()
+    protected override void Awake()
     {
-        base.Start();
+        base.Awake();
     }
 
     private void Update()
@@ -19,7 +22,8 @@ public class LaserWeaponController : WeaponController
         if (target != null)
         {
             Vector2 direction = target.position - transform.position;
-            this.transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
+            Quaternion directionQuaternion = Quaternion.FromToRotation(Vector3.up, direction);
+            this.transform.rotation = Quaternion.Slerp(this.transform.rotation, directionQuaternion, torretRotationVelocity);
         }
     }
 
@@ -27,6 +31,7 @@ public class LaserWeaponController : WeaponController
     {
         base.FireWeapon();
         Instantiate(weaponData._WeaponPrefab, this.transform.position, this.transform.rotation);
+        _fireEffect.Play();
     }
 
     public void UpgradeDamage(float modifyDamage)

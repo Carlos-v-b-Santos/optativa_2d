@@ -5,11 +5,12 @@ using UnityEngine;
 public class WeaponController : MonoBehaviour
 {
     [SerializeField] protected WeaponSO weaponData;
+    [SerializeField] protected Transform projectilesTransform;
     //[SerializeField] protected GameObject _WeaponPrefab;
     public float currentCooldown;
 
     // Start is called before the first frame update
-    protected virtual void Start()
+    protected virtual void Awake()
     {
         currentCooldown = weaponData.Cooldown;
 

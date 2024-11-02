@@ -5,6 +5,9 @@ using UnityEngine.UIElements;
 
 public class BulletWeaponController : WeaponController
 {
+    [SerializeField] private ParticleSystem _fireEffect;
+    [SerializeField] private ParticleSystem _fireEffect2;
+
     [SerializeField] float maxAngle = 45f;
     [SerializeField] float rotationVelocity = 2f;
 
@@ -14,9 +17,9 @@ public class BulletWeaponController : WeaponController
     float angle;
 
     // Start is called before the first frame update
-    protected override void Start()
+    protected override void Awake()
     {
-        base.Start();
+        base.Awake();
 
         initialRotation = transform.localRotation;
     }
@@ -34,8 +37,10 @@ public class BulletWeaponController : WeaponController
     protected override void FireWeapon()
     {
         base.FireWeapon();
-        Instantiate(weaponData._WeaponPrefab, this.transform.position, transform.rotation * Quaternion.Euler(0, 0, 90));
-        Instantiate(weaponData._WeaponPrefab, this.transform.position, transform.rotation * Quaternion.Euler(0, 0, -90));
+        Instantiate(weaponData._WeaponPrefab, this.transform.position, transform.rotation * Quaternion.Euler(0, 0, 90), projectilesTransform);
+        Instantiate(weaponData._WeaponPrefab, this.transform.position, transform.rotation * Quaternion.Euler(0, 0, -90), projectilesTransform);
+        _fireEffect.Play();
+        _fireEffect2.Play();
     }
 
     public void UpgradeCooldown(float modifyCooldown)

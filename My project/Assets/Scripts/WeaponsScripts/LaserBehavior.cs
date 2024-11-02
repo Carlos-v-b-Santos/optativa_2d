@@ -8,7 +8,7 @@ public class LaserBehavior : ProjectileWeaponBehavior
     Rigidbody2D rb2D;
 
     // Start is called before the first frame update
-    protected override void Start()
+    protected override void Awake()
     {
         laserWeaponController = GameObject.FindGameObjectWithTag("Laser").GetComponent<LaserWeaponController>();
         CurrentDamage = weaponData.Damage + laserWeaponController.modifyDamage;

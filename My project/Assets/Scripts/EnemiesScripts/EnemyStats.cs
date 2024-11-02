@@ -35,6 +35,12 @@ public class EnemyStats : MonoBehaviour
     {
         GameManager.Instance.score += enemyData.PointValue;
         Instantiate(enemyData._ExpPrefab,this.transform.position,Quaternion.identity);
+        KillEffect();
         Destroy(this.gameObject);
+    }
+
+    private void KillEffect()
+    {
+        Instantiate(enemyData._KillEffect,this.transform.position,Quaternion.identity);
     }
 }

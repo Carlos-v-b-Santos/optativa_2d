@@ -10,6 +10,9 @@ public class WeaponSO : ScriptableObject
     [SerializeField] GameObject _weaponPrefab;
     public GameObject _WeaponPrefab { get => _weaponPrefab; private set => _weaponPrefab = value; }
 
+    [SerializeField] GameObject _impactEffect;
+    public GameObject _ImpactEffect { get => _impactEffect; private set => _impactEffect = value; }
+
     [SerializeField] float damage;
     public float Damage { get => damage; private set => damage = value; }
 

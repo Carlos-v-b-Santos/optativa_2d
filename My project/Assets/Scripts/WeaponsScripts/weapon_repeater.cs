@@ -7,7 +7,7 @@ public class weapon_repeater : MonoBehaviour
     [SerializeField] GameObject projetile;
     [SerializeField] float timeReload;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         StartCoroutine(fireWeapon());
     }

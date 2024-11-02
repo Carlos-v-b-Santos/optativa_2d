@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Laser
   m_EditorClassIdentifier: 
   _weaponPrefab: {fileID: 5481171266808141527, guid: af1baef833aaf0540ac03aa38a592a8e, type: 3}
+  _impactEffect: {fileID: 100002, guid: cafecd3fc3b761c45bb1553f35cf5c96, type: 3}
   damage: 3
   speed: 600
   cooldown: 1

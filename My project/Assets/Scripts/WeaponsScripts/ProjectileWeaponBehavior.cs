@@ -10,7 +10,7 @@ public class ProjectileWeaponBehavior : MonoBehaviour
 
 
     // Start is called before the first frame update
-    protected virtual void Start()
+    protected virtual void Awake()
     {
         CurrentDamage = weaponData.Damage;
         CurrentPierce = weaponData.Pierce;
@@ -20,6 +20,8 @@ public class ProjectileWeaponBehavior : MonoBehaviour
 
     public virtual void DecreasePierce()
     {
+        ImpactEffect();
+
         CurrentPierce--;
 
         if (CurrentPierce <= 0)
@@ -31,5 +33,10 @@ public class ProjectileWeaponBehavior : MonoBehaviour
     public virtual void DestroyProjetile()
     {
         Destroy(this.gameObject);
+    }
+
+    protected void ImpactEffect()
+    {
+        Instantiate(weaponData._ImpactEffect, this.transform.position, Quaternion.identity);
     }
 }

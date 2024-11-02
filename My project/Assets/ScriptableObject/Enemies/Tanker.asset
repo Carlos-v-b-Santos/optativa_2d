@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Tanker
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 7609602366059103699, guid: a9ed038e50a91414c880d1a72c13f7bf, type: 3}
+  _killEffect: {fileID: 100002, guid: 6ecf76dc4f268d340b2666896a954bcc, type: 3}
   moveSpeed: 1
   maxHealth: 10
   damage: 3

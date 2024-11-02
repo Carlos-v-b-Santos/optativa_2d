@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Hunter
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 7609602366059103699, guid: 081685db7f4c0d341a69532c92958973, type: 3}
+  _killEffect: {fileID: 100006, guid: 2e7e92bc7175b744ea40878dedfa79e4, type: 3}
   moveSpeed: 3
   maxHealth: 1
   damage: 1

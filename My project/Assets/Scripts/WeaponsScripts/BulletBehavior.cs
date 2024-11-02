@@ -8,9 +8,9 @@ public class BulletBehavior : ProjectileWeaponBehavior
 {
     Rigidbody2D rb2D;
     // Start is called before the first frame update
-    protected override void Start()
+    protected override void Awake()
     {
-        base.Start();
+        base.Awake();
         rb2D = GetComponent<Rigidbody2D>();
         FireBullet();
     }
