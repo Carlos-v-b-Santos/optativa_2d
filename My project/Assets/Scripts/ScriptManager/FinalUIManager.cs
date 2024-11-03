@@ -25,11 +25,11 @@ public class FinalUIManager : MonoBehaviour
     void Update()
     {
         scoreRecord.text = new string("Pontuação: " + PlayerPrefs.GetInt(scoreRecordKey));
-        timeRecord.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(PlayerPrefs.GetFloat(timeRecordKey) / 60), 
+        timeRecord.text = string.Format("Tempo: {0:00}:{1:00}", Mathf.FloorToInt(PlayerPrefs.GetFloat(timeRecordKey) / 60), 
             Mathf.FloorToInt(PlayerPrefs.GetFloat(timeRecordKey) % 60));
 
         score.text = new string("Pontuação: " + PlayerPrefs.GetInt(scoreKey));
-        time.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(PlayerPrefs.GetFloat(timeKey) / 60),
+        time.text = string.Format("Tempo: {0:00}:{1:00}", Mathf.FloorToInt(PlayerPrefs.GetFloat(timeKey) / 60),
             Mathf.FloorToInt(PlayerPrefs.GetFloat(timeKey) % 60));
     }
 }

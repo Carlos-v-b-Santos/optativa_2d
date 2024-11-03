@@ -6,7 +6,8 @@ public class CannonWeaponController : WeaponController
 {
     [SerializeField] private ParticleSystem _fireEffect;
 
-    public int modifyPierce = 0;
+    public float modifySize = 0;
+    [SerializeField] private float sizeStep = 0.1f;
 
     // Start is called before the first frame update
     protected override void Awake()
@@ -22,9 +23,9 @@ public class CannonWeaponController : WeaponController
 
     }
 
-    public virtual void UpgradePierce(int modifyPierce)
+    public virtual void UpgradeSize()
     {
-        this.modifyPierce += modifyPierce;
+        this.modifySize += sizeStep;
         GameManager.Instance.UpgradeChoiced();
     }
 }

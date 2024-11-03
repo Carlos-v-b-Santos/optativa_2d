@@ -17,7 +17,7 @@ public class CannonBehavior : ProjectileWeaponBehavior
         cannonWeaponController = GameObject.FindGameObjectWithTag("Cannon").GetComponent<CannonWeaponController>();
 
         CurrentDamage = weaponData.Damage;
-        CurrentPierce = weaponData.Pierce + cannonWeaponController.modifyPierce;
+        CurrentPierce = weaponData.Pierce;
 
         Destroy(this.gameObject, weaponData.Duration);
 
@@ -31,11 +31,16 @@ public class CannonBehavior : ProjectileWeaponBehavior
 
     private void FixedUpdate()
     {
-        cannonBallTransform.localScale += sizeScale * Time.deltaTime;
+        cannonBallTransform.localScale += cannonWeaponController.modifySize * Time.deltaTime * sizeScale ;
     }
 
     protected void FireCannon()
     {
         rb2D.AddRelativeForce(Vector2.up * weaponData.Speed);
+    }
+
+    public override void DecreasePierce()
+    {
+        ImpactEffect();
     }
 }
