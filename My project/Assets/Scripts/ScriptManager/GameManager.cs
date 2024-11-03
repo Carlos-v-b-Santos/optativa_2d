@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     //sistema de entrada
     public PlayerInputActions playerInputActions;
 
+    TransitionEffect transitionEffect;
+
     [SerializeField] private GameObject _panel;
     [SerializeField] private PlayerStats _player;
 
@@ -42,6 +44,10 @@ public class GameManager : MonoBehaviour
 
         playerInputActions.Player.Enable();
         
+        transitionEffect = FindObjectOfType<TransitionEffect>();
+
+        transitionEffect.FadeOut();
+
         ResumeGame();
     }
     public void LevelUP()
@@ -58,7 +64,9 @@ public class GameManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        transitionEffect.FadeOut();
         Time.timeScale = 1;
+        
     }
 
     public void UpgradeChoiced()
@@ -92,5 +100,10 @@ public class GameManager : MonoBehaviour
         }
 
         ChanceScene(2);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

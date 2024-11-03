@@ -16,6 +16,12 @@ public class HUDManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI levelText;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI clockText;
+    
+    [SerializeField] private GameObject _pausePanel;
+    [SerializeField] private Image btnPause;
+    [SerializeField] private Sprite btnPauseSprite;
+    [SerializeField] private Sprite btnResumeSprite;
+    private bool isPaused;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +32,8 @@ public class HUDManager : MonoBehaviour
             return;
         }
         Instance = this;
+
+        PauseButton();
     }
 
     private void Update()
@@ -38,5 +46,23 @@ public class HUDManager : MonoBehaviour
 
         _ExpSlider.value = _player.exp;
         _ExpSlider.maxValue = _player.expToUpLevel;
+    }
+
+    public void PauseButton()
+    {
+        if (isPaused)
+        {
+            btnPause.sprite = btnPauseSprite;
+            _pausePanel.SetActive(false);
+            isPaused = false;
+            GameManager.Instance.ResumeGame();
+        }
+        else
+        {
+            btnPause.sprite = btnResumeSprite;
+            _pausePanel.SetActive(true);
+            isPaused = true;
+            GameManager.Instance.PauseGame();
+        }
     }
 }
