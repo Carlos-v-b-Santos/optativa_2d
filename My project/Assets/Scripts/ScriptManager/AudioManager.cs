@@ -9,7 +9,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField] public AudioSource musicAudioSource;
     [SerializeField] public AudioSource engineAudioSource;
     [SerializeField] public AudioSource monsterAudioSource;
-    [SerializeField] public AudioSource projectileAudioSource;
+    [SerializeField] public AudioSource bulletAudioSource;
+    [SerializeField] public AudioSource laserAudioSource;
+    [SerializeField] public AudioSource cannonAudioSource;
     [SerializeField] public AudioSource impactAudioSource;
 
     [SerializeField][Range(0,1)] private float musicVolume = 1f;

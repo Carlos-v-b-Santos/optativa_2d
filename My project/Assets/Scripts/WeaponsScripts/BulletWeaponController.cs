@@ -37,6 +37,7 @@ public class BulletWeaponController : WeaponController
     protected override void FireWeapon()
     {
         base.FireWeapon();
+        AudioManager.Instance.bulletAudioSource.PlayOneShot(clip);
         Instantiate(weaponData._WeaponPrefab, this.transform.position, transform.rotation * Quaternion.Euler(0, 0, 90), projectilesTransform);
         Instantiate(weaponData._WeaponPrefab, this.transform.position, transform.rotation * Quaternion.Euler(0, 0, -90), projectilesTransform);
         _fireEffect.Play();

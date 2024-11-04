@@ -30,7 +30,8 @@ public class LaserWeaponController : WeaponController
     protected override void FireWeapon()
     {
         base.FireWeapon();
-        Instantiate(weaponData._WeaponPrefab, this.transform.position, this.transform.rotation);
+        AudioManager.Instance.laserAudioSource.PlayOneShot(clip);
+        Instantiate(weaponData._WeaponPrefab, this.transform.position, this.transform.rotation, projectilesTransform);
         _fireEffect.Play();
     }
 

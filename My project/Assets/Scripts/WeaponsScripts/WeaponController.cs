@@ -29,7 +29,7 @@ public class WeaponController : MonoBehaviour
 
     protected virtual void FireWeapon()
     {
-        AudioManager.Instance.projectileAudioSource.PlayOneShot(clip);
+        //AudioManager.Instance.projectileAudioSource.PlayOneShot(clip);
         //Instantiate(_WeaponPrefab, this.transform);
     }
 }

@@ -7,7 +7,6 @@ public class CannonWeaponController : WeaponController
     [SerializeField] private ParticleSystem _fireEffect;
 
     public float modifySize = 0;
-    [SerializeField] private float sizeStep = 0.1f;
 
     // Start is called before the first frame update
     protected override void Awake()
@@ -18,12 +17,13 @@ public class CannonWeaponController : WeaponController
     protected override void FireWeapon()
     {
         base.FireWeapon();
+        //AudioManager.Instance.cannonAudioSource.PlayOneShot(clip);
         Instantiate(weaponData._WeaponPrefab, this.transform.position, this.transform.rotation, projectilesTransform);
         _fireEffect.Play();
 
     }
 
-    public virtual void UpgradeSize()
+    public virtual void UpgradeSize(float sizeStep)
     {
         this.modifySize += sizeStep;
         GameManager.Instance.UpgradeChoiced();

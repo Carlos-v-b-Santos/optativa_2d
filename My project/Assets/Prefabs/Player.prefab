@@ -113,6 +113,7 @@ MonoBehaviour:
   playerStats: {fileID: 5300629257260622146}
   rightFlame: {fileID: 3185623879432532562}
   leftFlame: {fileID: 5379439662285426962}
+  audioClip: {fileID: 8300000, guid: 57d96e0355d21364780d4009e3b7057b, type: 3}
 --- !u!50 &7380037180462007456
 Rigidbody2D:
   serializedVersion: 4
@@ -190,8 +191,8 @@ MonoBehaviour:
   health: 3
   healthForLevel: 1
   exp: 0
-  expToUpLevel: 100
-  increaseExpToUpLevel: 100
+  expToUpLevel: 50
+  increaseExpToUpLevel: 50
   Level: 1
 --- !u!1 &2993426941997483042
 GameObject:
@@ -436,6 +437,10 @@ PrefabInstance:
       value: BulletWeaponController
       objectReference: {fileID: 0}
     - target: {fileID: 7306344934718655302, guid: e3815e1b89250ce4ebe3d70ff68e4d82, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: a421c88e31c06c24791fbcc9cd18a8db, type: 3}
+    - target: {fileID: 7306344934718655302, guid: e3815e1b89250ce4ebe3d70ff68e4d82, type: 3}
       propertyPath: _fireEffect
       value: 
       objectReference: {fileID: 4387706491624614974}
@@ -537,6 +542,22 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4432595764535116722, guid: 6d6a3217257920342b510d3a47cc2d3d, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: f137c96122ff42e41a14058c4d6cbf58, type: 3}
+    - target: {fileID: 4432595764535116722, guid: 6d6a3217257920342b510d3a47cc2d3d, type: 3}
+      propertyPath: sizeStep
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4432595764535116722, guid: 6d6a3217257920342b510d3a47cc2d3d, type: 3}
+      propertyPath: modifySize
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4432595764535116722, guid: 6d6a3217257920342b510d3a47cc2d3d, type: 3}
+      propertyPath: _fireEffect
+      value: 
+      objectReference: {fileID: 6429094568329058231}
+    - target: {fileID: 4432595764535116722, guid: 6d6a3217257920342b510d3a47cc2d3d, type: 3}
       propertyPath: modifyPierce
       value: 1
       objectReference: {fileID: 0}
@@ -627,11 +648,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19800002, guid: 565cdc2ed7b030a41accd8f00ae59a50, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.49019608
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19800002, guid: 565cdc2ed7b030a41accd8f00ae59a50, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -706,11 +727,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19800002, guid: 565cdc2ed7b030a41accd8f00ae59a50, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.49019608
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19800002, guid: 565cdc2ed7b030a41accd8f00ae59a50, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -872,11 +893,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19800002, guid: 565cdc2ed7b030a41accd8f00ae59a50, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.49019608
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19800002, guid: 565cdc2ed7b030a41accd8f00ae59a50, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1038,17 +1059,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19800002, guid: 565cdc2ed7b030a41accd8f00ae59a50, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.49019608
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19800002, guid: 565cdc2ed7b030a41accd8f00ae59a50, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 565cdc2ed7b030a41accd8f00ae59a50, type: 3}
+--- !u!198 &6429094568329058231 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19800002, guid: 565cdc2ed7b030a41accd8f00ae59a50, type: 3}
+  m_PrefabInstance: {fileID: 6429094568344127605}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6429094568344261367 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 565cdc2ed7b030a41accd8f00ae59a50, type: 3}
@@ -1207,6 +1233,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Laser
       objectReference: {fileID: 0}
+    - target: {fileID: 8933331911837100891, guid: c8474cd4dbc6df84c92babb4d034c805, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 01167a1df79e7a44383bc61473be1d13, type: 3}
     - target: {fileID: 8933331911837100891, guid: c8474cd4dbc6df84c92babb4d034c805, type: 3}
       propertyPath: aimSystem
       value: 
