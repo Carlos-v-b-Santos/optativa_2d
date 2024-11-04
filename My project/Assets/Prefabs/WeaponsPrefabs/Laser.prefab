@@ -164,3 +164,4 @@ MonoBehaviour:
   weaponData: {fileID: 11400000, guid: 4cdc5b60c24affe4d847ec26689b7c8d, type: 2}
   CurrentPierce: 0
   CurrentDamage: 0
+  impactAudio: {fileID: 8300000, guid: c8d3d864707a08c49992bb4dd0d18242, type: 3}

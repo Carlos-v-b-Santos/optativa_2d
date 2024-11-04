@@ -6,6 +6,7 @@ public class WeaponController : MonoBehaviour
 {
     [SerializeField] protected WeaponSO weaponData;
     [SerializeField] protected Transform projectilesTransform;
+    [SerializeField] protected AudioClip clip;
     //[SerializeField] protected GameObject _WeaponPrefab;
     public float currentCooldown;
 
@@ -28,6 +29,7 @@ public class WeaponController : MonoBehaviour
 
     protected virtual void FireWeapon()
     {
+        AudioManager.Instance.projectileAudioSource.PlayOneShot(clip);
         //Instantiate(_WeaponPrefab, this.transform);
     }
 }

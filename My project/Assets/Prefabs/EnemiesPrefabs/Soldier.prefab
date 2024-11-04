@@ -181,3 +181,4 @@ MonoBehaviour:
   currentMoveSpeed: 0
   currentHealth: 0
   currentDamage: 0
+  audioClip: {fileID: 8300000, guid: da79055cc27a29547b4a6a35deb76776, type: 3}

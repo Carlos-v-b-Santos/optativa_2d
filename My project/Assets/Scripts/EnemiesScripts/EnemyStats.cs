@@ -12,6 +12,8 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] private float currentHealth;
     public float currentDamage;
 
+    [SerializeField] private AudioClip audioClip;
+
     private void Awake()
     {
         enemyStatsModify = GameObject.FindGameObjectWithTag("EnemySpawner").GetComponent<EnemyStatsModify>();
@@ -42,5 +44,6 @@ public class EnemyStats : MonoBehaviour
     private void KillEffect()
     {
         Instantiate(enemyData._KillEffect,this.transform.position,Quaternion.identity);
+        AudioManager.Instance.monsterAudioSource.PlayOneShot(audioClip);
     }
 }

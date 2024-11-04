@@ -129,6 +129,7 @@ MonoBehaviour:
   weaponData: {fileID: 11400000, guid: a7de0c80532ff76418ae85f19eaa458e, type: 2}
   CurrentPierce: 0
   CurrentDamage: 0
+  impactAudio: {fileID: 8300000, guid: c8d3d864707a08c49992bb4dd0d18242, type: 3}
   initialSize: {x: 0.1, y: 0.1, z: 0}
   sizeScale: {x: 0.75, y: 0.75, z: 0}
 --- !u!58 &7082059901839847030

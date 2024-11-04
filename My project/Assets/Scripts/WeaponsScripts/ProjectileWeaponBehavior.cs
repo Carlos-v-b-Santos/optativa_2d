@@ -8,6 +8,7 @@ public class ProjectileWeaponBehavior : MonoBehaviour
     [SerializeField] protected int CurrentPierce;
     public float CurrentDamage;
 
+    [SerializeField] protected AudioClip impactAudio;
 
     // Start is called before the first frame update
     protected virtual void Awake()
@@ -38,5 +39,6 @@ public class ProjectileWeaponBehavior : MonoBehaviour
     protected void ImpactEffect()
     {
         Instantiate(weaponData._ImpactEffect, this.transform.position, Quaternion.identity);
+        AudioManager.Instance.impactAudioSource.PlayOneShot(impactAudio);
     }
 }

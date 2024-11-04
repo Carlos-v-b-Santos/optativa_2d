@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isRightActived;
     private bool isLeftActived;
 
+    [SerializeField] AudioClip audioClip;
+
      // Start is called before the first frame update
     void Awake()
     {
@@ -44,10 +46,6 @@ public class PlayerMovement : MonoBehaviour
             rb2D.AddRelativeForce(speed * playerForward * Vector2.up);
             isRightActived = true;
             isLeftActived = true;
-        }
-        else if (playerForward < 0)
-        {
-            //rb2D.AddRelativeForce(reverse * playerForward * Vector2.up);
         }
 
         //rotação
@@ -80,6 +78,19 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             leftFlame.SetActive(true);
+            
+        }
+
+        if (isRightActived || isLeftActived)
+        {
+            if (!AudioManager.Instance.engineAudioSource.isPlaying)
+            {
+                AudioManager.Instance.engineAudioSource.Play();
+            }
+        }
+        else
+        {
+            AudioManager.Instance.engineAudioSource.Stop();
         }
     }
 
