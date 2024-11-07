@@ -303,7 +303,8 @@ MonoBehaviour:
   _btnPlay: {fileID: 1540490712}
   _menuInicial: {fileID: 1504250859}
   audioSource: {fileID: 899507064}
-  audioClip: {fileID: 8300000, guid: 3be05bfa8a8a9864caac1a7dc5e9bcaf, type: 3}
+  audioClipIntro: {fileID: 8300000, guid: 3be05bfa8a8a9864caac1a7dc5e9bcaf, type: 3}
+  audioClipLoop: {fileID: 8300000, guid: ed63e91e05929a546a800ebeb9a75262, type: 3}
 --- !u!1 &788275147
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,8 +693,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967040
-  m_fontColor: {r: 0, g: 1, b: 1, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -863,7 +864,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 4, y: 0}
+  m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1480942889
 MonoBehaviour:
@@ -885,9 +886,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "O maior cruzador de defesa do planeta FiFe, o cruzador GloryHammer,  fazia
-    sua patrulha. \n\nEnquanto no planeta abaixo, os habitantes comemoravam o fim
-    de uma guerra que durou mil\xEAnios contra os Dundee, uma esp\xE9cie implac\xE1vel
+  m_text: "A maior espa\xE7onave de batalha do planeta FiFe, o cruzador GloryHammer, 
+    fazia sua patrulha. \n\nNo planeta abaixo, os habitantes comemoravam o fim de
+    uma guerra que durou mil\xEAnios contra os Dundee, uma esp\xE9cie implac\xE1vel
     de um sistema pr\xF3ximo. \n\nAp\xF3s incont\xE1veis batalhas e a perda de gera\xE7\xF5es
     inteiras, a paz finalmente havia sido assinada. \n\nFiFe, pela primeira vez em
     eras, experimentava alegria e esperan\xE7a.\r\n\r\nEntretanto, os radares da
@@ -908,7 +909,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967040
-  m_fontColor: {r: 0, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -932,7 +933,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 17
-  m_HorizontalAlignment: 8
+  m_HorizontalAlignment: 32
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1051,7 +1052,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 75}
+  m_SizeDelta: {x: 150, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1540490714
 MonoBehaviour:
@@ -1204,7 +1205,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xDAnica esperan\xE7a"
+  m_text: "\xDAltimo Basti\xE3o"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1213,8 +1214,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967040
-  m_fontColor: {r: 0, g: 1, b: 1, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1457,8 +1458,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2085,6 +2086,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6799629975801346520, guid: 32de39c2bb8d87a42a990dfbb0a98d8a, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 16cfc2c14c369b74badcea9014fb7d5e, type: 3}
     - target: {fileID: 8606826077047098399, guid: 32de39c2bb8d87a42a990dfbb0a98d8a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -753.27527

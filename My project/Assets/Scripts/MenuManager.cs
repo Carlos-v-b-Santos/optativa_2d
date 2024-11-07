@@ -8,7 +8,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject _btnPlay;
     [SerializeField] private GameObject _menuInicial;
     [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip audioClip;
+    [SerializeField] private AudioClip audioClipIntro;
+    [SerializeField] private AudioClip audioClipLoop;
 
     public void PlayIntro()
     {
@@ -16,7 +17,7 @@ public class MenuManager : MonoBehaviour
         _introCanva.SetActive(true);
         _btnPlay.SetActive(true);
         audioSource.Stop();
-        audioSource.PlayOneShot(audioClip);
+        audioSource.PlayOneShot(audioClipIntro);
         StartCoroutine(PlayIntroAudio());
     }
 
@@ -26,6 +27,7 @@ public class MenuManager : MonoBehaviour
         {
             yield return null;
         }
+        audioSource.clip = audioClipLoop;
         audioSource.Play();
     }
 }
