@@ -10,6 +10,7 @@ public class EnemyStatsSpawner : MonoBehaviour
     [SerializeField] Transform _enemiesTranformParent;
     [SerializeField] Vector2 spawnArea;
     [SerializeField] float spawnTimer;
+    [SerializeField] private float posCorretion;
 
     [SerializeField] private float enemyMilestone = 90;
     [SerializeField] private float enemyStep = 90;
@@ -18,6 +19,10 @@ public class EnemyStatsSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        Camera _camera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+        float cameraWidth = _camera.orthographicSize * 2f * _camera.aspect;
+        spawnArea = new Vector2(cameraWidth + posCorretion, _camera.orthographicSize + posCorretion);
+        
         StartCoroutine(EnemySpawn());
     }
 
@@ -25,6 +30,8 @@ public class EnemyStatsSpawner : MonoBehaviour
     {
         while (true)
         {
+            if (_enemies.Count > 50) yield return new WaitForSeconds(spawnTimer);
+
             SpawnEnemy();
             yield return new WaitForSeconds(spawnTimer);
         }

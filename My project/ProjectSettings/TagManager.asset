@@ -11,6 +11,9 @@ TagManager:
   - Laser
   - EnemySpawner
   - Bullet
+  - Ally
+  - ProjectileGroup
+  - EnemiesGroup
   layers:
   - Default
   - TransparentFX

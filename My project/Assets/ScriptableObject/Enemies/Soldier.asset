@@ -16,6 +16,6 @@ MonoBehaviour:
   _killEffect: {fileID: 100010, guid: e0609132424a24844b1d53ad3d704fd9, type: 3}
   moveSpeed: 2
   maxHealth: 3
-  damage: 2
+  damage: 1
   _expPrefab: {fileID: 5213997249512771400, guid: ff6f73fac682f634d9f5711d96575fba, type: 3}
   pointValue: 5

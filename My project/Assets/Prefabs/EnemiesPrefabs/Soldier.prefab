@@ -165,6 +165,8 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: 03a3ac628ce0d7e409842056c9bba227, type: 2}
   rb2D: {fileID: 0}
   player: {fileID: 0}
+  teleportDist: 0
+  teleportDistModify: 1.1
 --- !u!114 &5846580734566449467
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -43,7 +43,11 @@ public class PlayerMovement : MonoBehaviour
         // movimentação
         if (playerForward > 0)
         {
-            rb2D.AddRelativeForce(speed * playerForward * Vector2.up);
+            if(rb2D.velocity.magnitude < maxVelocity)
+            {
+                rb2D.AddRelativeForce(speed * playerForward * Vector2.up);
+            }
+
             isRightActived = true;
             isLeftActived = true;
         }

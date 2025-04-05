@@ -14,6 +14,7 @@ public class LaserWeaponController : WeaponController
     protected override void Awake()
     {
         base.Awake();
+        aimSystem = transform.parent.GetComponentInChildren<AimSystem>();
     }
 
     private void Update()

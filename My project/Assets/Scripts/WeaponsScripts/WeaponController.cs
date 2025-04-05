@@ -13,6 +13,8 @@ public class WeaponController : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Awake()
     {
+        projectilesTransform = GameObject.FindWithTag("ProjectileGroup").GetComponent<Transform>();
+
         currentCooldown = weaponData.Cooldown;
 
         StartCoroutine(FireWeaponSystem());

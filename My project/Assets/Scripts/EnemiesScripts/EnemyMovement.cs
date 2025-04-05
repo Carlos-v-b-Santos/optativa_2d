@@ -12,11 +12,18 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] Rigidbody2D rb2D;
     public GameObject player;
 
+    [SerializeField] private float teleportDist;
+    [SerializeField] private float teleportDistModify;
+
     // Start is called before the first frame update
     void Awake()
-    { 
+    {
         enemyStats = GetComponent<EnemyStats>();
         rb2D = GetComponent<Rigidbody2D>();
+
+        Camera _camera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+        float cameraWidth = _camera.orthographicSize * 2f * _camera.aspect;
+        teleportDist = cameraWidth * teleportDistModify;
     }
 
     // Update is called once per frame
@@ -63,5 +70,13 @@ public class EnemyMovement : MonoBehaviour
                 yield return new WaitForSeconds(.1f);
             }
         }
+    }
+
+    public void Teleport()
+    {
+        Vector2 forwardPlayer = player.transform.up.normalized;
+        Vector2 newPos = (Vector2)player.transform.position + forwardPlayer * teleportDist;
+
+        transform.position = newPos;
     }
 }

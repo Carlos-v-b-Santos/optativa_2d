@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e7407ae75f77f47a7046613f9f653e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVelocity: 100
+  maxVelocity: 4
   speed: 100
   reverse: 100
   rotation: 30
@@ -544,7 +544,7 @@ PrefabInstance:
     - target: {fileID: 4432595764535116722, guid: 6d6a3217257920342b510d3a47cc2d3d, type: 3}
       propertyPath: clip
       value: 
-      objectReference: {fileID: 8300000, guid: f137c96122ff42e41a14058c4d6cbf58, type: 3}
+      objectReference: {fileID: 8300000, guid: 9e07af2815efb4e418d68f34c4b5f7bb, type: 3}
     - target: {fileID: 4432595764535116722, guid: 6d6a3217257920342b510d3a47cc2d3d, type: 3}
       propertyPath: sizeStep
       value: 0.25

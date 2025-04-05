@@ -46,3 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerT: {fileID: 0}
   _enemiesParent: {fileID: 0}
+  outOfRange: 0
+  outOfRangeMult: 3

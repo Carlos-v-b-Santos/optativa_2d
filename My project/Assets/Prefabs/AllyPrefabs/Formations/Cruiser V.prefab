@@ -1,0 +1,222 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9058338356710665182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7973094568312934673}
+  m_Layer: 0
+  m_Name: Cruiser V
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7973094568312934673
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9058338356710665182}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7977439587009159091}
+  - {fileID: 8894896569176381077}
+  - {fileID: 2838677320641119778}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &4407828959687729218
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7973094568312934673}
+    m_Modifications:
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515935285292472866, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_Name
+      value: Cruiser 3 (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+--- !u!4 &2838677320641119778 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+  m_PrefabInstance: {fileID: 4407828959687729218}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7007536849409356021
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7973094568312934673}
+    m_Modifications:
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515935285292472866, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_Name
+      value: Cruiser 3 (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+--- !u!4 &8894896569176381077 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+  m_PrefabInstance: {fileID: 7007536849409356021}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8429418984277391827
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7973094568312934673}
+    m_Modifications:
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515935285292472866, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+      propertyPath: m_Name
+      value: Cruiser 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+--- !u!4 &7977439587009159091 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1895664623686280800, guid: db6401183ca39bb4c973c3dce9ec15dd, type: 3}
+  m_PrefabInstance: {fileID: 8429418984277391827}
+  m_PrefabAsset: {fileID: 0}

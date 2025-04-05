@@ -41,7 +41,7 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!musicAudioSource.isPlaying && musicPlaylist.Count > 0)
+        if (!musicAudioSource.isPlaying && musicPlaylist.Count > 0 && !GameManager.Instance.IsPaused)
         {
             NextTrack();
         }
@@ -50,6 +50,16 @@ public class AudioManager : MonoBehaviour
     {
         musicAudioSource.clip = musicPlaylist[currentTrackIndex];
         musicAudioSource.Play();
+    }
+
+    public void PauseTrack()
+    {
+        musicAudioSource.Pause();
+    }
+
+    public void UnpauseTrack()
+    {
+        musicAudioSource.UnPause();
     }
     public void NextTrack()
     {
@@ -64,6 +74,10 @@ public class AudioManager : MonoBehaviour
             }
             else
             {
+
+                ClearAudioChannels();
+                GameManager.Instance.VictorySequence();
+
                 return; // Sai se não há mais faixas para tocar
             }
         }
@@ -81,8 +95,19 @@ public class AudioManager : MonoBehaviour
         musicAudioSource.volume = musicVolume;
     }
 
+    public void ClearAudioChannels()
+    {
+        musicAudioSource.Stop();
+        engineAudioSource.Stop();
+        monsterAudioSource.Stop();
+        bulletAudioSource.Stop();
+        laserAudioSource.Stop();
+        cannonAudioSource.Stop();
+        impactAudioSource.Stop();
+    }
+
     public void PlayOneShot(AudioClip clip)
     {
-        musicAudioSource.PlayOneShot(clip);
+        musicAudioSource.PlayOneShot(clip,1);
     }
 }
